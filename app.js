@@ -55,7 +55,8 @@ io.on('connection', (socket) => {
         })
     });
 
-/*//ПІДКЛЮЧЕННЯ ДО СОКЕТУ НА СТОРОНІ СЕРВЕРУ
+/*// -------------------------------------------
+
     socket.on("add_user_group", (data) => {
         socket.emit("add_user_group_client", {
             message:`Welcome to the group ${data.room}`
@@ -74,7 +75,7 @@ io.on('connection', (socket) => {
     socket.on('typing_privat_server', (data) => {
         io.sockets.to(users[data.userId]).emit('typing_privat_client', {username :socket.id })
     })
-//ПІДКЛЮЧЕННЯ ДО СОКЕТУ НА СТОРОНІ СЕРВЕРУ
+//ВИДАЛЕННЯ ЮЗЕРА ІЗ СПИСКУ
     socket.on("disconnect", () => {
         console.log(socket.id);
         let userIndex = users.indexOf(socket.id);
